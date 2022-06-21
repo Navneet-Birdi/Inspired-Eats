@@ -76,7 +76,7 @@ h3 {
 }
 /* main content */
 
-.mainContent {
+.main-content {
     display: flex;
     justify-content: center;
 }
