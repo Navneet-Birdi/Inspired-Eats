@@ -1,7 +1,11 @@
-:root {
+/*:root {
     --background-color: #59788e;
     --background: #4863a0;
     --border-color: #b4cfec;
+}*/
+.container{
+    max-width: 900px;
+    margin:auto;
     --white: #fff;
 }
 
