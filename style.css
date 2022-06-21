@@ -2,26 +2,62 @@
     --background-color: #59788e;
     --background: #4863a0;
     --border-color: #b4cfec;
+    --white: #fff;
 }
 
+* {
+    font-size: 62.5%;
+    background-color: #fff;
+}
 /* section1 */
 .section1 {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
     display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    font-family: 'cormorant', sans-serif;
+    letter-spacing: 2rem;
 }
 
 .quote {
-    font-family: 'pacifico', cursive;
+    font-family: 'dancing script', cursive;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
 }
+
 /* section2 */ 
 
 .section2 {
     display: flex;
+    justify-content: center;
     border-color: var(--border-color);
     background-color: var(--background-color);
 }
 
-h1 {
-    justify-content: center;
+.heading {
+    font-size: 2rem;
+    color: var(--white);
 }
 
+.text {
+    font-size: 2rem;
+    color: var(--white);
+
+}
+h3 {
+    font-size: 3.5rem;
+    color: var(--white);
+}
+/* main content */
+
+.mainContent {
+    display: flex;
+    justify-content: center;
+}
 
