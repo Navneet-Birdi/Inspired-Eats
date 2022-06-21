@@ -39,11 +39,11 @@ return weatherPromise
     console.log(temp, conditions)
     
     if(temp < 25) {
-        $(weatherIcon).attr("src", "icons/cold.png")
+        $(weatherIcon).attr("src", "./assets/imgs/icons/cold.png")
         $(weatherIcon).attr("height", "50px")
         $(iconEl).append(weatherIcon)
     } else {
-        $(weatherIcon).attr("src", "icons/warm.png")
+        $(weatherIcon).attr("src", "./assets/imgs/icons/warm.png")
         $(weatherIcon).attr("height", "50px")
         $(iconEl).append(weatherIcon)
     }
