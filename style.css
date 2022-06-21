@@ -2,14 +2,11 @@
     --background-color: #59788e;
     --background: #4863a0;
     --border-color: #b4cfec;
-<<<<<<< HEAD
 }*/
 .container{
     max-width: 900px;
     margin:auto;
-=======
     --white: #fff;
->>>>>>> ff91e3c9782238a9264eb9cc2726c7fbb34bfceb
 }
 
 * {
