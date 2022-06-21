@@ -25,24 +25,27 @@
 <!--ist section featured recipe one-->
     <section class="section2">
         <div class="header">
-            <img src="http://store-images.s-microsoft.com/image/apps.10595.14397430983184912.cfdf6f70-0a34-4999-b494-936559d822c3.7355576f-baf9-4be3-8b34-27bdc6ac1bd2" alt="a sun and cloud" width="100px" height="100px"/>
-            <p class="heading">Today's weather</p>
-             <h3>Featured Recipe</h3>
+           <img id="weather-icon" src="./assets/imgs/icons/cold.png"/>
+           
+           
+           
+            <p id="weather"></p>
+            
            <!--<h3>Featured Recipe</h3>-->
         </div>
-        <article class="content">
+       <!-- <article class="content">
            
             <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=768,574" alt="gnocchi" width="150px" height="150px"/>
             <p class="text" id="quote"></p>
-        </article>
+        </article>-->
     </section>
 
   
 
-    <div class="city">
-        <form id="select-city">
-            <input class="input-search" id="city" type="text" placeholder="Enter City"
-            <button class=""btn btn-primary" type="submit">Find</button>
+    <div class="recipe">
+        <form id="search-recipe">
+            <input class="input-search" id="city" type="text" placeholder="Enter Keyword"
+            <button class=""btn btn-primary" type="submit">Search</button>
         </form>
     </div>
 <!--
