@@ -1,31 +1,40 @@
 /*:root {
-    --background-color: #59788e;
+   
     --background: #4863a0;
     --border-color: #b4cfec;
 }*/
-.container{
-    max-width: 900px;
-    margin:auto;
-    --white: #fff;
+body{
+   
+    margin-left: 200px;
+    margin-right: 200px;
+    /*background-color: rgb(160, 159, 179);*/
+ 
 }
+
 
 * {
     font-size: 62.5%;
-    background-color: #fff;
+    /*background-color: #fff;*/
+    background-color: rgb(76, 93, 109);
+    color:white;
 }
 /* section1 */
 .section1 {
     display: flex; 
     flex-direction: column;
     justify-content: center;
+    /*background-color: rgb(160, 159, 179);*/
 }
 
 h1 {
     display: flex;
     justify-content: center;
-    font-size: 5rem;
+    font-size: 6rem;
     font-family: 'cormorant', sans-serif;
-    letter-spacing: 2rem;
+    margin-bottom: 30px;
+    
+    
+    /*background-color: rgb(160, 159, 179);*/
 }
 
 .quote {
@@ -34,6 +43,9 @@ h1 {
     justify-content: center;
     font-size: 3rem;
     align-content: center;
+    margin-top: -10px;
+    /*background-color: rgb(160, 159, 179);*/
+    
 
 }
 
