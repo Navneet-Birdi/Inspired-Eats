@@ -15,6 +15,21 @@ fetch(api_url)
 
 getapi(api_url);
 
+const searchBtn = document.getElementById('search-btn');
+const mealContent = document.querySelector('meal');
+
+function getMealContent() {
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian`,{
+        mode: "cors"
+    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+        })
+}
+getMealContent();
 
 
 
