@@ -1,7 +1,20 @@
-// Quotes API
+const mainContent = document.getElementById("main");
+const weatherEL = document.getElementById("weather");
+const iconEl = document.getElementById("weather-icon");
+const recipeEl = document.getElementById("recipe-container");
+const recipeTitle = document.getElementById("recipe-title");
+const recipeImgEl = document.getElementById("recipe-img-el");
+const recipeText = document.getElementById("recipe-text");
+const searchBtn = document.getElementById("search-btn")
+const userCity = document.getElementById("cityname")
+// HIDE RECIPE CONTAINER UNTIL CITY PROVIDED
 
+// mainContent.style.display = "none";
+
+// Quotes API
 const api_url ="https://api.adviceslip.com/advice";
-const quoteArea= document.getElementById("quote")
+const quoteArea= document.getElementById("quote");
+
 function getapi(url)
 {
 fetch(api_url)
@@ -20,8 +33,6 @@ getapi(api_url);
 
 // Weather API
 const weatherKey = "af8df023e716fa9cc10ee93697bcbff5";
-const weatherEL = document.getElementById("weather")
-const iconEl = document.getElementById("weather-icon")
 
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=perth&appid=${weatherKey}&units=metric`)
 .then(function (result) {
