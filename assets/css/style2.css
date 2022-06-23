@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(76, 95, 109);
+    color:white;
+}
+
+h1, h4, h6 {
+    display: flex;
+    justify-content: center;
+    font-family: 'cormorant', sans-serif;
+    margin-bottom: 30px;
+}
+
+.quote {
+    font-family: 'dancing script', cursive;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: -10px;
+    color:rgb(192, 203, 215)
+}
+
+.cityinput {
+    color: white;
+    width: 50%;
+}
+
+.citycontainer {
+    width: 40%;
+    margin: auto;
+}
+
+.btncontainer {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 5px;
+}
+
+
+
+.conditions {
+    color:rgb(240, 240, 240)
+}
+
+.recipe-container {
+    padding-bottom: 5rem;
+}
+.recipe-img {
+    height: 100px;
+    width: 100px;
+}
+
