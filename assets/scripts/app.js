@@ -8,7 +8,8 @@ const recipeText = document.getElementById("recipe-text");
 const searchBtn = document.getElementById("search-btn")
 const userCity = document.getElementById("cityname")
 // HIDE RECIPE CONTAINER UNTIL CITY PROVIDED
-mainContent.style.display = "none";
+
+// mainContent.style.display = "none";
 
 // Quotes API
 const api_url ="https://api.adviceslip.com/advice";
