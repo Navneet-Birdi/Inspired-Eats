@@ -1,91 +1,71 @@
-/*:root {
-   
-    --background: #4863a0;
-    --border-color: #b4cfec;
-}*/
-body{
-   
-    margin-left: 200px;
-    margin-right: 200px;
-    /*background-color: rgb(160, 159, 179);*/
- 
-}
-
-
-* {
-    font-size: 62.5%;
-    /*background-color: #fff;*/
-    background-color: rgb(76, 93, 109);
+body {
+    background-color: rgb(76, 95, 109);
     color:white;
 }
-/* section1 */
-.section1 {
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    /*background-color: rgb(160, 159, 179);*/
-}
 
-h1 {
+h1, h4, h6 {
     display: flex;
     justify-content: center;
-    font-size: 6rem;
     font-family: 'cormorant', sans-serif;
     margin-bottom: 30px;
-    
-    
-    /*background-color: rgb(160, 159, 179);*/
 }
 
 .quote {
     font-family: 'dancing script', cursive;
     display: flex;
     justify-content: center;
-    font-size: 3rem;
     align-content: center;
     margin-top: -10px;
-    /*background-color: rgb(160, 159, 179);*/
-    
-
+    color:rgb(192, 203, 215)
 }
 
-/* section2 */ 
+.cityinput {
+    color: white;
+    width: 50%;
+}
 
-.section2 {
+.citycontainer {
+    width: 40%;
+    margin: auto;
+}
+
+.btncontainer {
     display: flex;
     justify-content: center;
-    border-color: var(--border-color);
-    background-color: var(--background-color);
+    margin: auto;
+    padding-bottom: 5px;
 }
 
-.heading {
-    font-size: 2rem;
-    color: var(--white);
-    float:right;
+
+.conditions {
+    color:rgb(240, 240, 240)
 }
 
-.text {
-    font-size: 2rem;
-    color: var(--white);
-
+.recipe-container {
+    padding-bottom: 5rem;
 }
-h3 {
-    font-size: 2.5rem;
-    color: var(--white);
-
-}
-/* main content */
-
-.main-content {
-    display: flex;
-    justify-content: center;
-}
-#weather{
-    font-size: large;
-    float:right;
+.recipe-img {
+    height: 135px;
+    width: 135px;
+    border-radius: 100px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: rgb(44, 44, 44);
+    border-color: rgb(200, 229, 255, 0.3);
+    padding: 5px;
+    margin-bottom: 20px;
 }
 
-h5{
-    font-size: large;
-    float: right;
+.link {
+    color:rgb(192, 239, 255)
+}
+
+.title {
+   color:rgb(221, 239, 255);
+   font-family: 'dancing script', cursive;
+}
+
+.weather-el {
+    color:rgb(232, 249, 255);
+   font-family: 'cormorant', sans-serif;
 }

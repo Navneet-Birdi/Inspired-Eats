@@ -5,32 +5,110 @@ const recipeEl = document.getElementById("recipe-container");
 const recipeTitle = document.getElementById("recipe-title");
 const recipeImgEl = document.getElementById("recipe-img-el");
 const recipeText = document.getElementById("recipe-text");
-const searchBtn = document.getElementById("search-btn")
-const userCity = document.getElementById("cityname")
+const searchBtn = document.getElementById("search-button");
+
 // HIDE RECIPE CONTAINER UNTIL CITY PROVIDED
 
-// mainContent.style.display = "none";
+ mainContent.style.display = "none";
 
 // Quotes API
-const api_url ="https://api.adviceslip.com/advice";
-const quoteArea= document.getElementById("quote");
+const api_url = "https://api.adviceslip.com/advice";
+const quoteArea = document.getElementById("quote");
 
-function getapi(url)
-{
-fetch(api_url)
-.then(function (response) {
-    return response.json();
-})
-.then(function (data) {
-    console.log(data);
-    
-    quoteArea.textContent = data.slip.advice;
-})
+function getapi(url) {
+  fetch(api_url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+
+      quoteArea.textContent = data.slip.advice;
+    });
 }
 
 getapi(api_url);
 
+$(searchBtn).click(function () {
+  mainContent.style.display = "";
+  
+  // if table is already populated, clear it
+  $("#recipe-img-el").empty();
+  $(iconEl).empty();
+  $("#recipe-text").empty();
+  // get search city
+  const userCityEl = document.getElementById("cityname");
+  const userCity = $(userCityEl).val();
 
+  // Weather API
+  const weatherKey = "af8df023e716fa9cc10ee93697bcbff5";
+
+  fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${userCity}&appid=${weatherKey}&units=metric`
+  )
+    .then(function (result) {
+      if(result.status > 400) {
+        alert("Please enter a valid city");
+      }
+      const weatherPromise = result.json();
+      return weatherPromise;
+    })
+    .then(function (weatherPromise) {
+      const weatherIcon = $("<img>");
+
+      const temp = weatherPromise.main.temp;
+      const conditions = weatherPromise.weather[0].main;
+
+      $(weatherEL).attr("class", "left weather-el")
+      $(weatherEL).text(temp + "° " + conditions);
+      console.log(temp, conditions);
+
+      if (temp < 25) {
+        // GENERATE COLD ICON
+        $(weatherIcon).attr("src", "./assets/imgs/icons/cold.png");
+        $(weatherIcon).attr("height", "50px");
+        $(iconEl).append(weatherIcon);
+
+        // GET COLD WEATHER OPTIONS
+
+        fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=british`, {
+          mode: "cors",
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            const recipes = data.meals;
+            const coldIndex = Math.floor(Math.random() * 57);
+            $("#recipe-title").text(recipes[coldIndex].strMeal);
+            const recipeImg = $("<img>");
+            $(recipeImg).attr("class", "recipe-img");
+            $(recipeImg).attr("src", recipes[coldIndex].strMealThumb);
+            $("#recipe-img-el").append(recipeImg);
+            const recipeId = recipes[coldIndex].idMeal;
+            const recipeLink = $("<a>");
+            $(recipeLink).attr("class", "link");
+            $(recipeLink).attr(
+              "href",
+              "https://www.themealdb.com/meal/" + recipeId
+            );
+            $(recipeLink).text("Here");
+            $("#recipe-text").text(
+              "Escape the cold and find comfort in something that'll make you forget you haven't seen the sun in who knows how long! Find the recipe "
+            );
+            $("#recipe-text").append(recipeLink);
+
+            console.log(recipes[coldIndex]);
+          });
+      } else {
+        // GENERATE WARM ICON
+        $(weatherIcon).attr("src", "./assets/imgs/icons/warm.png");
+        $(weatherIcon).attr("height", "50px");
+        $(iconEl).append(weatherIcon);
+
+        // GET WARM WEATHER RECIPES
+
+<<<<<<< HEAD
 // Weather API
 const weatherKey = "af8df023e716fa9cc10ee93697bcbff5";
 
@@ -63,3 +141,35 @@ return weatherPromise
 
 
 
+=======
+        fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=american`, {
+          mode: "cors",
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            const recipes = data.meals;
+            const warmIndex = Math.floor(Math.random() * 32);
+            $("#recipe-title").text(recipes[warmIndex].strMeal);
+            const recipeImg = $("<img>");
+            $(recipeImg).attr("class", "recipe-img");
+            $(recipeImg).attr("src", recipes[warmIndex].strMealThumb);
+            $("#recipe-img-el").append(recipeImg);
+            const recipeId = recipes[warmIndex].idMeal;
+            const recipeLink = $("<a>");
+            $(recipeLink).attr(
+              "href",
+              "https://www.themealdb.com/meal/" + recipeId
+            );
+            $(recipeLink).attr("class", "link")
+            $(recipeLink).text("Here");
+            $("#recipe-text").text(
+              "Take your mind off the heat or whip this up to add a little something to an already fine day! Find the recipe "
+            );
+            $("#recipe-text").append(recipeLink);
+          });
+      }
+    });
+});
+>>>>>>> b379fc69d3cf30f216a1a476d35cdcc5a0180a81
