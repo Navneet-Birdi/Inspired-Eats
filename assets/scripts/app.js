@@ -128,6 +128,7 @@ $(searchBtn).click(function () {
               "href",
               "https://www.themealdb.com/meal/" + recipeId
             );
+            $(recipeLink).attr("class", "link")
             $(recipeLink).text("Here");
             $("#recipe-text").text(
               "Take your mind off the heat or whip this up to add a little something to an already fine day! Find the recipe "
