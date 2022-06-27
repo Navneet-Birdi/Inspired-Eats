@@ -61,9 +61,11 @@ h1, h4, h6 {
 }
 
 .title {
-   color:rgb(187, 223, 255)
+   color:rgb(221, 239, 255);
+   font-family: 'dancing script', cursive;
 }
 
 .weather-el {
-    color:rgb(232, 249, 255)
+    color:rgb(232, 249, 255);
+   font-family: 'cormorant', sans-serif;
 }
