@@ -87,7 +87,7 @@ $(searchBtn).click(function () {
         const temp = weatherPromise.main.temp;
         const conditions = weatherPromise.weather[0].main;
 
-        $(weatherEL).attr("class", "left weather-el");
+        $(weatherEL).attr("class", "center weather-el");
         $(weatherEL).text(temp + "° " + conditions);
         console.log(temp, conditions);
 
