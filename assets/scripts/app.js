@@ -11,7 +11,8 @@ const searchBtn = document.getElementById("search-button");
 
 mainContent.style.display = "none";
 
-// Quotes API
+// QUOTES API
+
 const api_url = "https://api.adviceslip.com/advice";
 const quoteArea = document.getElementById("quote");
 
@@ -21,8 +22,6 @@ function getapi(url) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-
       quoteArea.textContent = data.slip.advice;
     });
 }
@@ -36,13 +35,14 @@ $(searchBtn).click(function () {
   $("#recipe-img-el").empty();
   $(iconEl).empty();
   $("#recipe-text").empty();
+  $(weatherEL).text("");
 
   // get search city
   const userCityEl = document.getElementById("cityname");
   const userCity = $(userCityEl).val();
   const isHistory = localStorage.getItem(userCity);
-  // if city has been searched before populate table
 
+  // if city has been searched before populate table
   if (isHistory) {
     mainContent.style.display = "";
     const previousCity = JSON.parse(window.localStorage.getItem(userCity));
@@ -63,7 +63,8 @@ $(searchBtn).click(function () {
     );
     $("#recipe-text").append(recipeLink);
   } else {
-    // Weather API
+        
+      // WEATHER API
 
     const weatherKey = "af8df023e716fa9cc10ee93697bcbff5";
 
@@ -72,10 +73,16 @@ $(searchBtn).click(function () {
     )
       .then(function (result) {
         if (result.status > 400) {
-          alert("Please enter a valid city");
+          M.toast({
+            html: "You must be lost! - City not found, please try again.",
+            inDuration: "100",
+          });
         }
         if (!userCity) {
-          alert("Please enter a location");
+          M.toast({
+            html: "Inspired Eats takes the guesswork out of cooking! Type in a city so we can find a relevant recipe.",
+            inDuration: "100",
+          });
         } else {
           const weatherPromise = result.json();
           return weatherPromise;
@@ -89,7 +96,6 @@ $(searchBtn).click(function () {
 
         $(weatherEL).attr("class", "center weather-el");
         $(weatherEL).text(temp + "° " + conditions);
-        console.log(temp, conditions);
 
         // GENERATE COLD ICON
 
@@ -146,12 +152,13 @@ $(searchBtn).click(function () {
           mainContent.style.display = "";
 
           // GENERATE WARM ICON
+
           $(weatherIcon).attr("src", "./assets/imgs/icons/warm.png");
 
           $(weatherIcon).attr("height", "50px");
           $(iconEl).append(weatherIcon);
 
-          // GET WARM WEATHER RECIPES
+          // GET WARM WEATHER OPTIONS
 
           fetch(
             `https://www.themealdb.com/api/json/v1/1/filter.php?a=american`,
