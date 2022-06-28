@@ -68,6 +68,7 @@ h1, h4, h6 {
 
 .weather-el {
     color:rgb(232, 249, 255);
+<<<<<<< HEAD
     font-family: 'cormorant', sans-serif;
     justify-items: center;
 }
@@ -114,3 +115,8 @@ h1, h4, h6 {
         font-size: 6.5rem;
     }
 }
+=======
+   font-family: 'cormorant', sans-serif;
+}
+
+>>>>>>> c30d472cf32932004ce3a79337d2a9f95ecb9ed7
