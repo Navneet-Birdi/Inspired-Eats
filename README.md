@@ -1,4 +1,3 @@
-# Inspired-Eats
 
 # Inspired-Eats
 
