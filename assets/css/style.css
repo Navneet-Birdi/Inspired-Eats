@@ -1,6 +1,7 @@
 body {
     background-color: rgb(76, 95, 109);
     color:white;
+    justify-content: center;
 }
 
 h1, h4, h6 {
@@ -16,7 +17,7 @@ h1, h4, h6 {
     justify-content: center;
     align-content: center;
     margin-top: -10px;
-    color:rgb(192, 203, 215)
+    color:rgb(192, 203, 215);
 }
 
 .cityinput {
@@ -36,7 +37,6 @@ h1, h4, h6 {
     padding-bottom: 5px;
 }
 
-
 .conditions {
     color:rgb(240, 240, 240)
 }
@@ -54,6 +54,7 @@ h1, h4, h6 {
     border-color: rgb(200, 229, 255, 0.3);
     padding: 5px;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .link {
@@ -67,5 +68,49 @@ h1, h4, h6 {
 
 .weather-el {
     color:rgb(232, 249, 255);
-   font-family: 'cormorant', sans-serif;
+    font-family: 'cormorant', sans-serif;
+    justify-items: center;
+}
+
+#search-button :hover {
+    box-shadow: 0 0.4rem 1.4rem 0 #000;
+}
+
+/* 700px */
+@media (min-width: 43.75em){
+    h1 {
+        font-size: 5rem;
+    }
+    h4 {
+        font-size: 3rem;
+    }
+    h6 {
+        font-size: 2.5rem;
+    }
+}
+
+/* 992px */
+@media (min-width: 62em){
+    h1 {
+        font-size: 8rem;
+    }
+    h4 {
+        font-size: 5rem;
+    }
+    h6 {
+        font-size: 4.5rem;
+    }
+}
+
+/* 1392px */ 
+@media (min-width: 87em){
+    h1 {
+        font-size: 10rem;
+    }
+    h4 {
+        font-size: 7rem;
+    }
+    h6 {
+        font-size: 6.5rem;
+    }
 }
