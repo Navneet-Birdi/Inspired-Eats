@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# Inspired-Eats
 
-=======
 #Inspired-Eats
 
 ![project1](https://user-images.githubusercontent.com/103732777/175956338-9fb4bdcb-7bff-43c8-bbd8-5bdf82da1343.png)
