@@ -4,7 +4,7 @@ body {
     justify-content: center;
 }
 
-h1, h4, h6 {
+h1, h4, h5, h6  {
     display: flex;
     justify-content: center;
     font-family: 'cormorant', sans-serif;
@@ -15,9 +15,10 @@ h1, h4, h6 {
     font-family: 'dancing script', cursive;
     display: flex;
     justify-content: center;
-    align-content: center;
+    text-align: center;
     margin-top: -10px;
     color:rgb(192, 203, 215);
+    text-align-last: center;
 }
 
 .cityinput {
@@ -44,6 +45,7 @@ h1, h4, h6 {
 .recipe-container {
     padding-bottom: 5rem;
 }
+
 .recipe-img {
     height: 135px;
     width: 135px;
@@ -79,38 +81,16 @@ h1, h4, h6 {
 /* 700px */
 @media (min-width: 43.75em){
     h1 {
-        font-size: 5rem;
+        font-size: clamp(4rem, 10vw + 1rem, 12rem);
     }
     h4 {
-        font-size: 3rem;
+        font-size: clamp(3rem, 3vw + 1rem, 10rem);
     }
-    h6 {
-        font-size: 2.5rem;
+    h5 {
+        font-size: clamp(1.5rem, 2vw + 1rem, 3.5rem)
+    }
+    h6  {
+        font-size: clamp(2.5rem, 10vw + 1rem , 4.5rem)
     }
 }
 
-/* 992px */
-@media (min-width: 62em){
-    h1 {
-        font-size: 8rem;
-    }
-    h4 {
-        font-size: 5rem;
-    }
-    h6 {
-        font-size: 4.5rem;
-    }
-}
-
-/* 1392px */ 
-@media (min-width: 87em){
-    h1 {
-        font-size: 10rem;
-    }
-    h4 {
-        font-size: 7rem;
-    }
-    h6 {
-        font-size: 6.5rem;
-    }
-}
