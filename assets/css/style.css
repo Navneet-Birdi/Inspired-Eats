@@ -85,6 +85,10 @@ h1, h4, h5, h6  {
     transform: translateX(50%) translateY(50%);
 }
 
+.sub-heading {
+    font-family: 'dancing script', cursive;
+    color: white;
+}
 /* 700px */
 @media (min-width: 43.75em){
     h1 {

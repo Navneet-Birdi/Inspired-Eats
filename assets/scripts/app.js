@@ -22,7 +22,10 @@ function getapi(url) {
       return response.json();
     })
     .then(function (data) {
-      quoteArea.textContent = data.slip.advice;
+      const quoteMark = $("<p>");
+      $(quoteMark).attr("id", "quote-mark")
+      quoteMark.text('"')
+      quoteArea.textContent = quoteMark.text() + data.slip.advice + quoteMark.text();
     });
 }
 
@@ -36,6 +39,7 @@ $(searchBtn).click(function () {
   $(iconEl).empty();
   $("#recipe-text").empty();
   $(weatherEL).text("");
+  $(searchBtn).attr("class", "waves-effect btn-small")
 
   // get search city
   const userCityEl = document.getElementById("cityname");
@@ -63,8 +67,7 @@ $(searchBtn).click(function () {
     );
     $("#recipe-text").append(recipeLink);
   } else {
-        
-      // WEATHER API
+    // WEATHER API
 
     const weatherKey = "af8df023e716fa9cc10ee93697bcbff5";
 
